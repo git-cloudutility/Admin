@@ -27,6 +27,7 @@ export function DataTable({
   filterOptions,
   onExport,
   pageSize = 10,
+  actionButton,
 }) {
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState('all');
@@ -131,10 +132,13 @@ export function DataTable({
           )}
         </div>
 
-        <Button variant="outline" onClick={onExport || exportToCSV} className="gap-2">
-          <Download className="w-4 h-4" />
-          Export CSV
-        </Button>
+        <div className="flex gap-2">
+          <Button variant="outline" onClick={onExport || exportToCSV} className="gap-2">
+            <Download className="w-4 h-4" />
+            Export CSV
+          </Button>
+          {actionButton}
+        </div>
       </div>
 
       {/* Table */}

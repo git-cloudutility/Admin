@@ -5,20 +5,20 @@ import { apiService } from '@/services/api';
 import { Users, FileUser, FolderKanban, Clock, TrendingUp } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import {
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-  PieChart,
-  Pie,
-  Cell,
-} from 'recharts';
+// import {
+//   AreaChart,
+//   Area,
+//   XAxis,
+//   YAxis,
+//   CartesianGrid,
+//   Tooltip,
+//   ResponsiveContainer,
+//   PieChart,
+//   Pie,
+//   Cell,
+// } from 'recharts';
 
-const COLORS = ['hsl(174, 72%, 50%)', 'hsl(262, 83%, 58%)', 'hsl(38, 92%, 50%)', 'hsl(142, 76%, 45%)', 'hsl(0, 84%, 60%)', 'hsl(200, 70%, 50%)'];
+// const COLORS = ['hsl(174, 72%, 50%)', 'hsl(262, 83%, 58%)', 'hsl(38, 92%, 50%)', 'hsl(142, 76%, 45%)', 'hsl(0, 84%, 60%)', 'hsl(200, 70%, 50%)'];
 
 const statusColors = {
   pending: 'bg-warning/20 text-warning border-warning/30',
@@ -97,7 +97,7 @@ const Dashboard = () => {
         {/* Charts */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Area Chart */}
-          <Card className="lg:col-span-2 glass-card">
+          {/* <Card className="lg:col-span-2 glass-card">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <TrendingUp className="w-5 h-5 text-primary" />
@@ -134,10 +134,10 @@ const Dashboard = () => {
                 </AreaChart>
               </ResponsiveContainer>
             </CardContent>
-          </Card>
+          </Card> */}
 
           {/* Pie Chart */}
-          <Card className="glass-card">
+          {/* <Card className="glass-card">
             <CardHeader>
               <CardTitle>Domain Distribution</CardTitle>
             </CardHeader>
@@ -181,7 +181,7 @@ const Dashboard = () => {
                 ))}
               </div>
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
 
         {/* Recent Applications */}

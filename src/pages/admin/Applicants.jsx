@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { AdminHeader } from '@/components/admin/AdminHeader';
 import { DataTable } from '@/components/admin/DataTable';
+import { AddApplicantDialog } from '@/components/admin/AddApplicantDialog';
 import { apiService } from '@/services/api';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -19,7 +20,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import { MoreHorizontal, Eye, CheckCircle, XCircle, Calendar, Trash2 } from 'lucide-react';
+import { MoreHorizontal, Eye, CheckCircle, XCircle, Calendar, Trash2, UserPlus } from 'lucide-react';
 import { toast } from 'sonner';
 
 const statusColors = {
@@ -34,6 +35,7 @@ const Applicants = () => {
   const [loading, setLoading] = useState(true);
   const [selectedApplicant, setSelectedApplicant] = useState(null);
   const [viewDialogOpen, setViewDialogOpen] = useState(false);
+  const [addDialogOpen, setAddDialogOpen] = useState(false);
 
   useEffect(() => {
     fetchApplicants();
@@ -199,8 +201,21 @@ const Applicants = () => {
             { value: 'rejected', label: 'Rejected' },
             { value: 'interview', label: 'Interview' },
           ]}
+          actionButton={
+            <Button onClick={() => setAddDialogOpen(true)} className="gap-2">
+              <UserPlus className="w-4 h-4" />
+              Add Applicant
+            </Button>
+          }
         />
       </div>
+
+      {/* Add Applicant Dialog */}
+      <AddApplicantDialog
+        open={addDialogOpen}
+        onOpenChange={setAddDialogOpen}
+        onSuccess={fetchApplicants}
+      />
 
       {/* View Dialog */}
       <Dialog open={viewDialogOpen} onOpenChange={setViewDialogOpen}>
