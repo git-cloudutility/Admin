@@ -89,7 +89,7 @@ const AdminLogin = () => {
                 placeholder="hradmin@cloudutility.in"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-secondary/50"
+                className=""
                 disabled={isLoading}
               />
             </div>
@@ -103,7 +103,7 @@ const AdminLogin = () => {
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="bg-secondary/50 pr-10"
+                  className=""
                   disabled={isLoading}
                 />
                 <button
